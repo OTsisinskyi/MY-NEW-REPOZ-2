@@ -42,18 +42,16 @@ public:
 
     void Ate()
     {
-        if (mass * amount > 2) {
-            cout << "\n" << "__________" << endl;
+        int allowable_amount;
+        if (mass * amount > allowable_amount) {
             cout << "\nYou are on diet!";
-            cout << "\n" << "__________" << endl;
         }
         else {
-            cout << "\n" << "__________" << endl;
             cout << "\nWhat delicious candies!";
-            cout << "\n" << "__________" << endl;
         }
     }
 };
+
 class Dinnertime
 {
 public:
@@ -84,7 +82,8 @@ public:
                 }
             }
         }
-        for (int i = 0; i < 3; i++) {
+        int number_of_candy;
+        for (int i = 0; i < number_of_candy; i++) {
             cout << "\nCandy: " << (candies[i].name) << " \nPrice :" << candies[i].price << endl;
         }
     }
