@@ -1,1 +1,1 @@
-# MY-NEW-REPOZ-2NEW REPOZ 21) Можна міняти суму. тим самим змінюється метод ate2) І в функції пошуку найбільшого числа поміняти в другому циклі for (i<5) тим самим буде до кінця відсортовано за ціною
+# MY-NEW-REPOZ-2NEW REPOZ 21) Candy search program by price2) The variable number_of_candy shows the number of candies to sort.
