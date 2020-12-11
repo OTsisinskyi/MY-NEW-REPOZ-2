@@ -23,17 +23,16 @@ public:
 
     Candy()
     {
-        name_type = NULL;
-        name = NULL;
+        name = "0";
         mass = 0;
         amount = 0;
         price = 0;
     }
 
     ~Candy() {}
-    Candy(TYPE name_type, string name, double mass, double amount, double price)
+    Candy(Candies type_candies, string name, double mass, double amount, double price)
     {
-        this->name_type = name_type;
+        this->type_candies = type_candies;
         this->name = name;
         this->mass = mass;
         this->amount = amount;
@@ -42,7 +41,7 @@ public:
 
     void Ate()
     {
-        int allowable_amount;
+        int allowable_amount = 2;
         if (mass * amount > allowable_amount) {
             cout << "\nYou are on diet!";
         }
@@ -52,14 +51,14 @@ public:
     }
 };
 
-class Dinnertime
+class DinnerTime
 {
 public:
     int day;
     double time;
     Candy candy;
 
-    Dinnertime(int day, double time, Candy nameofcandy)
+    DinnerTime(int day, double time, Candy nameofcandy)
     {
         this->day = day;
         this->time = time;
@@ -82,7 +81,7 @@ public:
                 }
             }
         }
-        int number_of_candy;
+        int number_of_candy = 3;
         for (int i = 0; i < number_of_candy; i++) {
             cout << "\nCandy: " << (candies[i].name) << " \nPrice :" << candies[i].price << endl;
         }
@@ -95,11 +94,11 @@ public:
 };
 
 int main() {
-    TYPE type_1 = popcorn;
-    TYPE type_2 = snack;
-    TYPE type_3 = cake;
-    TYPE type_4 = chips;
-    TYPE type_5 = pancakes;
+    Candies type_1 = popcorn;
+    Candies type_2 = snack;
+    Candies type_3 = cake;
+    Candies type_4 = chips;
+    Candies type_5 = pancakes;
     Candy Candies[5];
     Candies[0] = Candy(type_1, "Popcorn", 0.5, 0, 50);
     Candies[1] = Candy(type_2, "Snack", 0.33, 0, 20);
@@ -108,7 +107,7 @@ int main() {
     Candies[4] = Candy(type_5, "Pancakes", 1, 2, 90);
 
 
-    Dinnertime laba(16, 20.30, Candies[2]);
-    laba.findthemostexp(Candies, "name");
-    laba.eat();
+    DinnerTime time(16, 20.30, Candies[2]);
+    time.Findthemostexp(Candies, "name");
+    time.Eat();
 }
