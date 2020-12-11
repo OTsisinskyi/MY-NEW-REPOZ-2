@@ -3,32 +3,33 @@
 
 using namespace std;
 
-enum TYPE {
+enum Candies
+{
     popcorn,
     snack,
     cake,
     chips,
     pancakes,
-    unknown,
-    unknown2
 };
 
 class Candy
 {
 public:
-    TYPE name_type;
+    Candies type_candies;
     string name;
     double mass;
     double amount;
     double price;
+
     Candy()
     {
-        name_type = unknown;
-        name = unknown2;
+        name_type = NULL;
+        name = NULL;
         mass = 0;
         amount = 0;
         price = 0;
     }
+
     ~Candy() {}
     Candy(TYPE name_type, string name, double mass, double amount, double price)
     {
@@ -39,7 +40,7 @@ public:
         this->price = price;
     }
 
-    void ate()
+    void Ate()
     {
         if (mass * amount > 2) {
             cout << "\n" << "__________" << endl;
@@ -59,13 +60,15 @@ public:
     int day;
     double time;
     Candy candy;
+
     Dinnertime(int day, double time, Candy nameofcandy)
     {
         this->day = day;
         this->time = time;
         this->candy = nameofcandy;
     }
-    void findthemostexp(Candy* candies, string name)
+
+    void Findthemostexp(Candy* candies, string name)
     {
         Candy max;
         max = candies[0];
@@ -85,9 +88,10 @@ public:
             cout << "\nCandy: " << (candies[i].name) << " \nPrice :" << candies[i].price << endl;
         }
     }
-    void eat()
+
+    void Eat()
     {
-        candy.ate();
+        candy.Ate();
     }
 };
 
