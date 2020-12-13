@@ -58,14 +58,14 @@ public:
     double time;
     Candy candy;
 
-    DinnerTime(int day, double time, Candy nameofcandy)
+    DinnerTime(int day, double time, Candy name_of_candy)
     {
         this->day = day;
         this->time = time;
-        this->candy = nameofcandy;
+        this->candy = name_of_candy;
     }
 
-    void Findthemostexp(Candy* candies, string name)
+    void findTheMostExp(Candy* candies, string name)
     {
         Candy max;
         max = candies[0];
@@ -108,6 +108,6 @@ int main() {
 
 
     DinnerTime time(16, 20.30, Candies[2]);
-    time.Findthemostexp(Candies, "name");
+    time.findTheMostExp(Candies, "name");
     time.Eat();
 }
